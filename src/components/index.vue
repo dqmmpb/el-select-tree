@@ -209,7 +209,6 @@ export default {
       }
     },
     setSelected() {
-      this.selectedLabel = '';
 
       const propsValue = this.propsValue;
       const value = this.value;
@@ -228,8 +227,12 @@ export default {
           );
           if (selectedNode) {
             this.selectedLabel = selectedNode[this.propsLabel];
+          } else {
+            this.selectedLabel = '';
           }
         }
+      } else {
+        this.selectedLabel = '';
       }
     },
     setTreeDataState() {
