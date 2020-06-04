@@ -259,6 +259,7 @@ export default {
     },
     data() {
       this.setTreeDataState();
+      this.setSelected();
     },
     disabledValues() {
       this.setTreeDataState();
