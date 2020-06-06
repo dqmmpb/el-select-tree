@@ -187,7 +187,7 @@ export default {
       const children = data[this.props.children];
       const value = data[this.propsValue];
 
-      if (children && children.length && !this.checkStrictly) {
+      if (children && !this.checkStrictly) {
         component.handleExpandIconClick();
       } else if (!this.disabledValues.includes(value) && !this.multiple) {
         if (value !== this.value) {
