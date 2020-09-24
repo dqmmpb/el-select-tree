@@ -28,7 +28,8 @@
             :check-strictly="checkStrictly"
             :clearable="clearable"
             v-model="value1"
-          ></el-select-tree>
+          >
+          </el-select-tree>
           <div class="margin-left-medium">current value：{{ value1 }}</div>
         </div>
         <el-divider></el-divider>

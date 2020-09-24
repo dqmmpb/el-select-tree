@@ -34,17 +34,17 @@
         >
           <div
             class="el-select-tree__item"
-            slot-scope="{ data }"
+            slot-scope="{ node, data }"
             :class="treeItemClass(data)"
           >
-            {{ data[propsLabel] }}
+            <slot :node="node" :data="data">{{ data[propsLabel] }}</slot>
           </div>
         </el-tree>
       </el-scrollbar>
 
       <!-- empty text -->
       <p class="el-select-tree__empty" v-else>
-        无数据
+        {{ emptyText }}
       </p>
 
       <!-- trigger input -->
@@ -96,6 +96,10 @@ export default {
     clearable: Boolean,
     defaultExpandAll: Boolean,
     checkStrictly: Boolean,
+    emptyText: {
+      type: String,
+      default: '无数据'
+    },
     placeholder: {
       type: String,
       default: '请选择'
@@ -209,7 +213,6 @@ export default {
       }
     },
     setSelected() {
-
       const propsValue = this.propsValue;
       const value = this.value;
 
